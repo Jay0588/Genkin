@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>Services | Genkin Enterprises</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="Genkin-Logo-Fav.png" />
+<link rel="apple-touch-icon" href="Genkin-Logo-Fav.png" />
 <link rel="stylesheet" href="css/style.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -25,8 +27,21 @@
     <a href="index.html" class="brand">
       <img src="Genkin-logo.png" class="brand-logo"/>
     </a>
-
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="nav-toggle-bars">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </span>
+    </button>
     <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </nav>
+    <nav class="nav-links-mobile">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="services.html" class="nav-link active">Services</a>
@@ -67,15 +82,53 @@
   </div>
 </section>
 
+<section class="section reveal">
+  <div class="section-inner">
+    <p class="section-eyebrow">Quality assurance</p>
+    <h2 class="section-title">Quality Assurance</h2>
+
+    <p class="section-text">Genkin Enterprises is committed to a high quality of telecommunication designs and installations services. It is actively involved in the design and management of all its projects to exercise and maintain the highest standards of quality and finish. It is also selective of its suppliers of the various products by insisting on renowned quality manufacturers. It also allows its Clients to benefit from the latest design techniques.</p>
+
+    <p class="section-text">Genkin Enterprises quality policy is to achieve sustained, profitable growth by providing services which consistently satisfy the needs and expectations of its customers. This level of quality is achieved through adoption of a system of procedures that reflects the competence of the Company to existing customers, potential customers and external auditors.</p>
+
+    <p class="section-text">Achievement of this policy involves all personnel, who are individually responsible for the quality of their work, resulting in a continually improved working environment for all. This policy is provided and explained to each employee by the Quality Manager.</p>
+
+    <p class="section-text">To achieve and maintain the required level of assurance the Directors retains responsibility for the Quality System with routine operation controlled by the Quality Manager.</p>
+
+    <p class="section-text">The objectives of the Quality Assurance System are:</p>
+    <ul>
+      <li class="section-text">To maintain an effective Quality Assurance System complying with International Standard ISO 9001 (Quality Systems).</li>
+      <li class="section-text">To achieve and maintain a level of quality which enhances the Company's reputation with customers.</li>
+      <li class="section-text">To ensure compliance with relevant statutory and safety requirements.</li>
+      <li class="section-text">To endeavor, at all times and to maximize customer satisfaction with the services provided by it.</li>
+    </ul>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
-    <div><strong>Genkin Enterprises</strong><br>Civil Engineering · General Building · Project Management</div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Genkin-logo.png" class="footer-logo" alt="Genkin Enterprises"/>
+        <div><strong></strong><br/></div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <div>+254 719 613 475 / +254 717 904 242</div>
+        <div>genkinenterprises@gmail.com</div>
+        <div>Nairobi, Kenya</div>
+      </div>
+    </div>
     <div class="footer-row">
       <span>© Genkin Enterprises</span>
-      <span>•</span> +254 719 613 475 / +254 717 904 242
-      <span>•</span> genkinenterprises@gmail.com
     </div>
   </div>
  </footer>

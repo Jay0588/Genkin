@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>Contact | Genkin Enterprises</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="Genkin-Logo-Fav.png" />
+<link rel="apple-touch-icon" href="Genkin-Logo-Fav.png" />
 <link rel="stylesheet" href="css/style.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -24,7 +26,21 @@
 <header class="navbar">
   <div class="navbar-inner">
     <a href="index.html" class="brand"><img src="Genkin-logo.png" class="brand-logo"/></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="nav-toggle-bars">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </span>
+    </button>
     <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-cta active">Contact Us</a>
+    </nav>
+    <nav class="nav-links-mobile">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="services.html" class="nav-link">Services</a>
@@ -93,11 +109,26 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div><strong>Genkin Enterprises</strong><br>Civil Engineering · General Building · Project Management</div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Genkin-logo.png" class="footer-logo" alt="Genkin Enterprises"/>
+        <div><strong>Genkin Enterprises</strong><br/>Civil Engineering · General Building · Project Management</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <div>+254 719 613 475 / +254 717 904 242</div>
+        <div>genkinenterprises@gmail.com</div>
+        <div>Nairobi, Kenya</div>
+      </div>
+    </div>
     <div class="footer-row">
       <span>© Genkin Enterprises</span>
-      <span>•</span> +254 719 613 475 / +254 717 904 242
-      <span>•</span> genkinenterprises@gmail.com
     </div>
   </div>
 </footer>

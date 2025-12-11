@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>Projects | Genkin Enterprises</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="Genkin-Logo-Fav.png" />
+<link rel="apple-touch-icon" href="Genkin-Logo-Fav.png" />
 <link rel="stylesheet" href="css/style.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -26,8 +28,21 @@
     <a href="index.html" class="brand">
       <img src="Genkin-logo.png" class="brand-logo"/>
     </a>
-
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="nav-toggle-bars">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </span>
+    </button>
     <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </nav>
+    <nav class="nav-links-mobile">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="services.html" class="nav-link">Services</a>
@@ -41,20 +56,18 @@
 
 <section class="section reveal">
   <div class="section-inner">
-    <p class="section-eyebrow">In Progress</p>
-    <h2 class="section-title">Ongoing Projects</h2>
+    <p class="section-eyebrow">Showcase</p>
+    <h2 class="section-title">Project Photo Carousel</h2>
 
-    <div class="projects-grid">
-      <article class="project-card reveal">
-        <div class="project-image-wrapper">
-          <div class="project-image-placeholder">Image Coming Soon</div>
-          <div class="project-tag">Ongoing</div>
-        </div>
-        <div class="project-body">
-          <h3 class="project-name">Rumaisa Residency</h3>
-          <p class="project-location">Tiles &amp; Granite Works</p>
-        </div>
-      </article>
+    <div class="photo-carousel">
+      <div class="photo-track">
+        <div class="photo-slide"><img class="carousel-image" alt="Project photo" /></div>
+        <div class="photo-slide"><img class="carousel-image" alt="Project photo" /></div>
+        <div class="photo-slide"><img class="carousel-image" alt="Project photo" /></div>
+        <div class="photo-slide"><img class="carousel-image" alt="Project photo" /></div>
+        <div class="photo-slide"><img class="carousel-image" alt="Project photo" /></div>
+        <div class="photo-slide"><img class="carousel-image" alt="Project photo" /></div>
+      </div>
     </div>
   </div>
 </section>
@@ -67,23 +80,58 @@
     <div class="projects-grid">
       <article class="project-card reveal">
         <div class="project-image-wrapper">
-          <div class="project-image-placeholder">Image Coming Soon</div>
+          <img class="project-image" alt="Project photo" />
         </div>
         <div class="project-body"><h3 class="project-name">Coconut Villas</h3></div>
       </article>
 
       <article class="project-card reveal">
         <div class="project-image-wrapper">
-          <div class="project-image-placeholder">Image Coming Soon</div>
+          <img class="project-image" alt="Project photo" />
         </div>
         <div class="project-body"><h3 class="project-name">Crawford International School</h3></div>
       </article>
 
       <article class="project-card reveal">
         <div class="project-image-wrapper">
-          <div class="project-image-placeholder">Image Coming Soon</div>
+          <img class="project-image" alt="Project photo" />
         </div>
         <div class="project-body"><h3 class="project-name">Redhill Brooks – 43 Villas</h3></div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-image-wrapper">
+          <img class="project-image" alt="Project photo" />
+        </div>
+        <div class="project-body"><h3 class="project-name">Client Residence</h3></div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-image-wrapper">
+          <img class="project-image" alt="Project photo" />
+        </div>
+        <div class="project-body"><h3 class="project-name">Commercial Block</h3></div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-image-wrapper">
+          <img class="project-image" alt="Project photo" />
+        </div>
+        <div class="project-body"><h3 class="project-name">Hotel Atrium Renovation</h3></div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-image-wrapper">
+          <img class="project-image" alt="Project photo" />
+        </div>
+        <div class="project-body"><h3 class="project-name">Industrial Warehouse</h3></div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-image-wrapper">
+          <img class="project-image" alt="Project photo" />
+        </div>
+        <div class="project-body"><h3 class="project-name">Luxury Apartment Fit-Out</h3></div>
       </article>
     </div>
   </div>
@@ -93,11 +141,26 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div><strong>Genkin Enterprises</strong><br>Civil Engineering · General Building · Project Management</div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Genkin-logo.png" class="footer-logo" alt="Genkin Enterprises"/>
+        <div><strong></strong><br/></div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <div>+254 719 613 475 / +254 717 904 242</div>
+        <div>genkinenterprises@gmail.com</div>
+        <div>Nairobi, Kenya</div>
+      </div>
+    </div>
     <div class="footer-row">
       <span>© Genkin Enterprises</span>
-      <span>•</span> +254 719 613 475 / +254 717 904 242
-      <span>•</span> genkinenterprises@gmail.com
     </div>
   </div>
 </footer>
