@@ -101,6 +101,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const rotator = document.querySelector(".hero-rotator");
+  if (!rotator) return;
+  const slides = Array.from(rotator.querySelectorAll(".hero-slide"));
+  const captionEl = document.querySelector(".hero-rotator-caption");
+  const items = [
+    { folder: "Projects/Coconut Villas, Fairdeal Properties", img: "Projects/Coconut Villas, Fairdeal Properties/Fairdeal3.jpg" },
+    { folder: "Projects/Crawford Internnational School, Ark Construction Limited", img: "Projects/Crawford Internnational School, Ark Construction Limited/Crawford3.jpg" },
+    { folder: "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd", img: "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd/Redhills (1).jpg" },
+    { folder: "Projects/Tiles and Granite work, Ole-Sereni Hotel", img: "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (3).jpg" },
+    { folder: "Projects/Renovation & Extension, Bogani Road", img: "Projects/Renovation & Extension, Bogani Road/Boganiroad (5).jpg" },
+    { folder: "Projects/Thindigua View Apartments, Thindigua Estate Kiambu", img: "Projects/Thindigua View Apartments, Thindigua Estate Kiambu/Thindigua (2).jpg" },
+  ];
+  slides.forEach((s, i) => {
+    const img = s.querySelector(".hero-slide-image");
+    const item = items[i % items.length];
+    img.src = item.img;
+    img.alt = item.folder;
+  });
+  gsap.set(slides, { autoAlpha: 0 });
+  if (slides.length) gsap.set(slides[0], { autoAlpha: 1 });
+  if (captionEl) captionEl.textContent = items[0].folder;
+  let idx = 0;
+  setInterval(() => {
+    const current = slides[idx];
+    const next = slides[(idx + 1) % slides.length];
+    const nextItem = items[(idx + 1) % items.length];
+    gsap.to(current, { autoAlpha: 0, duration: 0.6, ease: "power1.out" });
+    gsap.fromTo(next, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.6, ease: "power1.out" });
+    if (captionEl) captionEl.textContent = nextItem.folder;
+    idx = (idx + 1) % slides.length;
+  }, 3500);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   if (form) {
     const resultEl = document.getElementById("form-result");
@@ -191,13 +225,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const imgs = ["pic1.jpg", "PIC2.jpg", "PIC3.jpg", "PIC5.jpg", "PIC6.jpg"];
-  const els = Array.from(document.querySelectorAll(".project-image"));
-  if (!els.length) return;
-  const shuffled = imgs.slice().sort(() => Math.random() - 0.5);
-  els.forEach((el, i) => {
-    el.src = shuffled[i % shuffled.length];
-    el.alt = "Project photo";
+  const map = {
+    "Coconut Villas": "Projects/Coconut Villas, Fairdeal Properties/Fairdeal1.jpg",
+    "Crawford International School": "Projects/Crawford Internnational School, Ark Construction Limited/Crawford1.jpg",
+    "Redhill Brooks – 43 Villas": "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd/Redhills (1).jpg",
+    "Client Residence": "Projects/Renovation & Extension, Bogani Road/Boganiroad (1).jpg",
+    "Commercial Block": "Projects/Thindigua View Apartments, Thindigua Estate Kiambu/Thindigua (1).jpg",
+    "Hotel Atrium Renovation": "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (1).jpg",
+    "Industrial Warehouse": "Projects/Boundary Wall Kilimanjaro, Karen/WALL1.jpg",
+    "Luxury Apartment Fit-Out": "Projects/Tile & Granite word, Rumasia Residency/Rumasia (1).jpg",
+  };
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+  cards.forEach((card) => {
+    const nameEl = card.querySelector(".project-name");
+    const imgEl = card.querySelector(".project-image");
+    if (!nameEl || !imgEl) return;
+    const key = (nameEl.textContent || "").trim();
+    const src = map[key];
+    if (src) {
+      imgEl.src = src;
+      imgEl.alt = key;
+    }
   });
 });
 
@@ -205,7 +253,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const carouselTrack = document.querySelector(".photo-carousel .photo-track");
   if (!carouselTrack) return;
   const slides = Array.from(carouselTrack.querySelectorAll(".photo-slide"));
-  const imgs = ["pic1.jpg", "PIC2.jpg", "PIC3.jpg", "PIC5.jpg", "PIC6.jpg"];
+  const imgs = [
+    "Projects/Coconut Villas, Fairdeal Properties/Fairdeal2.jpg",
+    "Projects/Crawford Internnational School, Ark Construction Limited/Crawford2.jpg",
+    "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd/Redhills (2).jpg",
+    "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (2).jpg",
+    "Projects/Renovation & Extension, Bogani Road/Boganiroad (2).jpg",
+    "Projects/Thindigua View Apartments, Thindigua Estate Kiambu/Thindigua (2).jpg",
+  ];
   const order = imgs.slice().sort(() => Math.random() - 0.5);
   slides.forEach((s, i) => {
     const img = s.querySelector(".carousel-image");
@@ -223,5 +278,82 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.fromTo(next, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.6, ease: "power1.out" });
     idx = (idx + 1) % slides.length;
   }, 3500);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const folderImages = {
+    "Projects/Coconut Villas, Fairdeal Properties": [
+      "Projects/Coconut Villas, Fairdeal Properties/Fairdeal1.jpg",
+      "Projects/Coconut Villas, Fairdeal Properties/Fairdeal2.jpg",
+      "Projects/Coconut Villas, Fairdeal Properties/Fairdeal3.jpg",
+      "Projects/Coconut Villas, Fairdeal Properties/Fairdeal4.jpg",
+    ],
+    "Projects/Crawford Internnational School, Ark Construction Limited": [
+      "Projects/Crawford Internnational School, Ark Construction Limited/Crawford1.jpg",
+      "Projects/Crawford Internnational School, Ark Construction Limited/Crawford2.jpg",
+      "Projects/Crawford Internnational School, Ark Construction Limited/Crawford3.jpg",
+      "Projects/Crawford Internnational School, Ark Construction Limited/Crawford4.jpg",
+    ],
+    "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd": [
+      "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd/Redhills (1).jpg",
+      "Projects/Redhill Brooks - 43 Villas Limuru road, Globalize Impex Ltd/Redhills (2).jpg",
+    ],
+    "Projects/Tiles and Granite work, Ole-Sereni Hotel": [
+      "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (1).jpg",
+      "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (2).jpg",
+      "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (3).jpg",
+      "Projects/Tiles and Granite work, Ole-Sereni Hotel/Sereni (4).jpg",
+    ],
+    "Projects/Renovation & Extension, Bogani Road": [
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (1).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (2).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (3).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (4).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (5).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (6).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (7).jpg",
+      "Projects/Renovation & Extension, Bogani Road/Boganiroad (8).jpg",
+    ],
+    "Projects/Thindigua View Apartments, Thindigua Estate Kiambu": [
+      "Projects/Thindigua View Apartments, Thindigua Estate Kiambu/Thindigua (1).jpg",
+      "Projects/Thindigua View Apartments, Thindigua Estate Kiambu/Thindigua (2).jpg",
+    ],
+    "Projects/Boundary Wall Kilimanjaro, Karen": [
+      "Projects/Boundary Wall Kilimanjaro, Karen/WALL1.jpg",
+      "Projects/Boundary Wall Kilimanjaro, Karen/WALL2.jpg",
+    ],
+    "Projects/Tile & Granite word, Rumasia Residency": [
+      "Projects/Tile & Granite word, Rumasia Residency/Rumasia (1).jpg",
+      "Projects/Tile & Granite word, Rumasia Residency/Rumasia (2).jpg",
+      "Projects/Tile & Granite word, Rumasia Residency/Rumasia (3).jpg",
+      "Projects/Tile & Granite word, Rumasia Residency/Rumasia (4).jpg",
+    ],
+  };
+  const carousels = Array.from(document.querySelectorAll(".project-carousel"));
+  carousels.forEach((el) => {
+    const folder = el.getAttribute("data-folder");
+    const imgs = folderImages[folder] || [];
+    const slides = imgs.map((src) => {
+      const slide = document.createElement("div");
+      slide.className = "project-carousel-slide";
+      const img = document.createElement("img");
+      img.className = "project-carousel-image";
+      img.src = src;
+      slide.appendChild(img);
+      el.appendChild(slide);
+      return slide;
+    });
+    gsap.set(slides, { autoAlpha: 0 });
+    if (slides.length) gsap.set(slides[0], { autoAlpha: 1 });
+    let idx = 0;
+    setInterval(() => {
+      if (!slides.length) return;
+      const current = slides[idx];
+      const next = slides[(idx + 1) % slides.length];
+      gsap.to(current, { autoAlpha: 0, duration: 0.5, ease: "power1.out" });
+      gsap.fromTo(next, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5, ease: "power1.out" });
+      idx = (idx + 1) % slides.length;
+    }, 3000);
+  });
 });
 
